@@ -259,3 +259,40 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+/* Profile Picture Styling */
+.portrait-card {
+  overflow: hidden;
+}
+
+.portrait-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.portrait-card::before {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.portrait-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    transparent 48%,
+    rgba(5, 9, 22, 0.62) 100%
+  );
+  pointer-events: none;
+}
+
+.portrait-caption {
+  z-index: 3;
+}
