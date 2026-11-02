@@ -31,7 +31,7 @@ body.light-mode {
   --shadow: 0 20px 55px rgba(35, 45, 90, .10);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html { scroll-behavior: auto; scroll-padding-top: 90px; }
 body {
   min-width: 320px; background: var(--bg); color: var(--text);
   font-family: "DM Sans", sans-serif; line-height: 1.65; overflow-x: hidden;
