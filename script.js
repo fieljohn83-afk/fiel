@@ -58,7 +58,7 @@ if ("IntersectionObserver" in window) {
 
   sections.forEach((section) => sectionObserver.observe(section));
 
-  // Smooth scrolling for all internal navigation links
+// PREMIUM SMOOTH SCROLLING
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
     const targetId = anchor.getAttribute("href");
@@ -66,18 +66,55 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (!targetId || targetId === "#") return;
 
     const target = document.querySelector(targetId);
-
     if (!target) return;
 
     event.preventDefault();
 
-    target.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    // Respect accessibility preferences
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      target.scrollIntoView({ behavior: "auto", block: "start" });
+      return;
+    }
 
+    const headerOffset = 90;
+    const startPosition = window.scrollY;
+    const targetPosition =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      headerOffset;
+
+    const distance = targetPosition - startPosition;
+    const duration = 1000;
+    let startTime = null;
+
+    // Smooth acceleration and deceleration
+    function easeInOutQuint(t) {
+      return t < 0.5
+        ? 16 * t * t * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 5) / 2;
+    }
+
+    function animateScroll(currentTime) {
+      if (startTime === null) startTime = currentTime;
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutQuint(progress);
+
+      window.scrollTo(
+        0,
+        startPosition + distance * easedProgress
+      );
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
+
+    // Update the URL without causing another jump
     history.pushState(null, "", targetId);
   });
 });
-
-
+}
