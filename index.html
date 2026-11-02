@@ -3,51 +3,263 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fiel E-Portfolio</title>
-
-  <!-- Connection 1: External CSS Link -->
+  <meta name="description" content="John Fiel's student portfolio showcasing skills, projects, and interests in information technology.">
+  <title>John Fiel | IT Student Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <!-- Connection 2: External JavaScript Link -->
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="page-glow page-glow-one"></div>
+  <div class="page-glow page-glow-two"></div>
 
-  <header>
-    <nav>
-      <h2>John Fiel E-Portfolio</h2>
-      <!-- Dynamic Target 1: Dark Mode Toggle -->
-      <button id="theme-btn">Toggle Dark Mode</button>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#hero" aria-label="John Fiel home">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span>John Fiel<span class="brand-dot">.</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link active" href="#hero">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-btn" aria-label="Switch color theme" title="Toggle theme">
+          <span class="theme-icon">☼</span>
+        </button>
+        <a class="nav-cta" href="#contact">Let's Talk <span>↗</span></a>
+      </div>
     </nav>
   </header>
 
   <main>
-    <section id="hero">
-      <h1>Welcome to My E-Portfolio</h1>
-      <p>1st Year Information Technology Student</p>
-    </section>
+    <section class="hero container section-anchor" id="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="status-dot"></span> IT STUDENT · FUTURE DEVELOPER</span>
+        <h1>Hi, I'm <span class="gradient-text">John Fiel</span><br> I build and explore<br> <span class="hero-outline">digital solutions.</span></h1>
+        <p class="hero-description">I'm a first-year Information Technology student who enjoys learning how technology works and turning ideas into useful, creative projects.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore My Work <span>↗</span></a>
+          <a class="button button-ghost" href="#about">More About Me <span>↓</span></a>
+        </div>
+        <div class="tech-strip">
+          <span class="tech-label">CURRENTLY LEARNING & USING</span>
+          <div class="tech-list" aria-label="Technologies">
+            <span class="tech-chip html-chip">HTML5</span>
+            <span class="tech-chip css-chip">CSS3</span>
+            <span class="tech-chip js-chip">JS</span>
+            <span class="tech-chip java-chip">Java</span>
+            <span class="tech-chip git-chip">Git</span>
+          </div>
+        </div>
+      </div>
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="card">
-        <h3>Web Integration Lab</h3>
-        <p>A demonstration of linking HTML, CSS, and JS.</p>
+      <div class="hero-art" aria-label="Decorative profile illustration">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="portrait-halo"></div>
+        <div class="portrait-card">
+          <div class="portrait-initials">JF</div>
+          <span class="portrait-caption">STUDENT DEVELOPER</span>
+        </div>
+        <div class="floating-code">
+          <div class="code-top"><span>◉</span><span>portfolio.js</span><i></i></div>
+          <pre><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">"John Fiel"</span>,
+  role: <span class="code-green">"IT Student"</span>,
+  focus: [
+    <span class="code-orange">"Web Development"</span>,
+    <span class="code-orange">"Programming"</span>
+  ],
+  goal: <span class="code-green">"Keep learning"</span>
+};</pre>
+        </div>
+        <div class="floating-badge"><span>✦</span> Learning by building</div>
+        <div class="art-grid"></div>
       </div>
     </section>
 
+    <section class="about-band section-anchor" id="about">
+      <div class="container about-layout">
+        <div class="about-copy">
+          <span class="section-kicker">A LITTLE INTRODUCTION</span>
+          <h2>Curious mind.<br><span class="gradient-text">Growing skill set.</span></h2>
+          <p>I'm an Information Technology student building my foundation in programming, web development, and problem-solving. I believe the best way to improve is to stay curious, practice consistently, and learn from every project.</p>
+          <p class="about-extra">My goal is to become a skilled programmer and create technology that is practical, accessible, and meaningful.</p>
+          <a class="text-link" href="#contact">Get to know me <span>↗</span></a>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-icon">⌘</span>
+            <div><strong>01<span>+</span></strong><small>Year in IT studies</small></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">⌁</span>
+            <div><strong>03<span>+</span></strong><small>Projects explored</small></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">◇</span>
+            <div><strong>05<span>+</span></strong><small>Tools & technologies</small></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">✧</span>
+            <div><strong>∞</strong><small>Ideas to learn</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <!-- Dynamic Target 2: Interactive Alert Button -->
-      <button id="contact-btn">Get in Touch</button>
+    <section class="skills-section container section-anchor" id="skills">
+      <div class="section-heading centered">
+        <span class="section-kicker">MY TOOLKIT</span>
+        <h2>Skills I'm <span class="gradient-text">developing</span></h2>
+        <p>A growing set of technical skills that I practice through coursework and personal projects.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <div class="skill-heading"><span class="skill-symbol orange">5</span><span>HTML</span><small>Markup</small></div>
+          <p>Structuring web pages with semantic elements.</p>
+          <div class="skill-track"><span style="--level:75%"></span></div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-heading"><span class="skill-symbol blue">3</span><span>CSS</span><small>Styling</small></div>
+          <p>Creating layouts, responsive designs, and visual styles.</p>
+          <div class="skill-track"><span style="--level:65%"></span></div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-heading"><span class="skill-symbol yellow">JS</span><span>JavaScript</span><small>Basics</small></div>
+          <p>Adding interactions and dynamic behavior to websites.</p>
+          <div class="skill-track"><span style="--level:45%"></span></div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-heading"><span class="skill-symbol red">J</span><span>Java</span><small>Programming</small></div>
+          <p>Practicing object-oriented concepts and problem-solving.</p>
+          <div class="skill-track"><span style="--level:55%"></span></div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-heading"><span class="skill-symbol green">⌘</span><span>Git</span><small>Version control</small></div>
+          <p>Learning to manage code changes and project versions.</p>
+          <div class="skill-track"><span style="--level:35%"></span></div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-heading"><span class="skill-symbol purple">◇</span><span>UI/UX</span><small>Design</small></div>
+          <p>Exploring user-friendly layouts and interface design.</p>
+          <div class="skill-track"><span style="--level:50%"></span></div>
+        </article>
+      </div>
+      <p class="skills-note">Progress bars are personal learning estimates, not formal proficiency ratings.</p>
+    </section>
+
+    <section class="projects-section section-anchor" id="projects">
+      <div class="container">
+        <div class="section-heading project-heading">
+          <div><span class="section-kicker">SELECTED WORK</span><h2>Projects & <span class="gradient-text">experiments</span></h2></div>
+          <span class="project-count">01 — 03</span>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-visual library-visual">
+              <div class="mock-window">
+                <div class="mock-toolbar"><i></i><i></i><i></i><span>LibreHub / Library</span></div>
+                <div class="mock-library">
+                  <div class="mock-side"><b></b><b></b><b></b><b></b></div>
+                  <div class="mock-books"><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+              <span class="visual-number">01</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta"><span>JAVA · DATABASE</span><span>01</span></div>
+              <h3>LibreHub Library System</h3>
+              <p>A library cataloging and inventory project focused on organizing book records and making book information easier to manage.</p>
+              <a class="project-link" href="#contact">Discuss project <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual voltez-visual">
+              <div class="energy-ui">
+                <div class="energy-top"><span>VOLTEZ4</span><b>● SYSTEM OVERVIEW</b></div>
+                <div class="energy-number">₱ 1,248.50<small>Estimated bill</small></div>
+                <div class="energy-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="energy-bottom"><span>APPLIANCE USAGE</span><span>VOLTAGE INDICATOR</span></div>
+              </div>
+              <span class="visual-number">02</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta"><span>HCI · FIGMA · RESEARCH</span><span>02</span></div>
+              <h3>Voltez4 Monitoring Prototype</h3>
+              <p>A user-centered prototype for estimating appliance electricity use, calculating costs, and presenting bill forecasts.</p>
+              <a class="project-link" href="#contact">Discuss project <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual research-visual">
+              <div class="research-panel">
+                <span>RESEARCH CONCEPT</span>
+                <div class="research-flame">♨</div>
+                <div class="research-flow"><i></i><b>HEAT</b><i></i><b>ENERGY</b><i></i><b>OUTPUT</b></div>
+                <small>THERMOELECTRIC GENERATOR</small>
+              </div>
+              <span class="visual-number">03</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta"><span>STEM · INNOVATION</span><span>03</span></div>
+              <h3>Plastic Waste to Resources</h3>
+              <p>A research concept exploring thermoelectric electricity generation and ash-based ink production from controlled plastic combustion.</p>
+              <a class="project-link" href="#contact">Discuss project <span>↗</span></a>
+            </div>
+          </article>
+        </div>
+        <p class="project-disclaimer">These entries describe academic projects and prototypes; they are not presented as commercial products.</p>
+      </div>
+    </section>
+
+    <section class="contact-section container section-anchor" id="contact">
+      <div class="contact-main">
+        <span class="section-kicker">HAVE AN IDEA?</span>
+        <h2>Let's learn and<br><span class="gradient-text">build something.</span></h2>
+        <p>I'm open to connecting with fellow students, sharing ideas, and learning about opportunities to grow in technology.</p>
+        <a class="button button-primary" href="mailto:your.email@example.com">Send Me an Email <span>↗</span></a>
+        <small class="email-hint">Replace the sample email address in the HTML with your own.</small>
+      </div>
+      <div class="contact-side">
+        <div class="quote-card">
+          <span class="quote-mark">“</span>
+          <p>Every expert was once a beginner. Every project is another chance to learn something new.</p>
+          <div class="quote-author"><span class="author-avatar">JF</span><div><strong>John Fiel</strong><small>IT Student · Aspiring Programmer</small></div></div>
+        </div>
+        <div class="social-block">
+          <span class="section-kicker">FIND ME ONLINE</span>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub profile">GH</a>
+            <a href="#" aria-label="Facebook profile">f</a>
+            <a href="#" aria-label="Instagram profile">ig</a>
+          </div>
+          <p class="social-hint">Update these links with your social profiles.</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <!-- Dynamic Target 3: Year Injection -->
-    <p>&copy; <span id="year"></span> All Rights Reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#hero"><span class="brand-mark">&lt;/&gt;</span><span>John Fiel<span class="brand-dot">.</span></span></a>
+      <p>© <span id="year"></span> John Fiel. Built with curiosity and code.</p>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
   </footer>
-
 </body>
 </html>
-
