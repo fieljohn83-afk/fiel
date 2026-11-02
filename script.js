@@ -79,8 +79,5 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     history.pushState(null, "", targetId);
   });
 });
-}
-
-
 
 
