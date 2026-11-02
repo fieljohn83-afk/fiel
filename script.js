@@ -57,6 +57,28 @@ if ("IntersectionObserver" in window) {
   }, { rootMargin: "-35% 0px -55% 0px" });
 
   sections.forEach((section) => sectionObserver.observe(section));
+
+  // Smooth scrolling for all internal navigation links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    const targetId = anchor.getAttribute("href");
+
+    if (!targetId || targetId === "#") return;
+
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
+    event.preventDefault();
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+    history.pushState(null, "", targetId);
+  });
+});
 }
 
 
