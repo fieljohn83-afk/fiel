@@ -238,8 +238,9 @@
         <span class="section-kicker">HAVE AN IDEA?</span>
         <h2>Let's learn and<br><span class="gradient-text">build something.</span></h2>
         <p>I'm open to connecting with fellow students, sharing ideas, and learning about opportunities to grow in technology.</p>
-        <a class="button button-primary" href="mailto:your.email@example.com">Send Me an Email <span>↗</span></a>
-        <small class="email-hint">Replace the sample email address in the HTML with your own.</small>
+        <div class="contact-actions">
+          <button class="button button-primary" id="email-popup-trigger" type="button">Send Me an Email <span>↗</span></button>
+        </div>
       </div>
       <div class="contact-side">
         <div class="quote-card">
@@ -282,6 +283,23 @@
         </div>
       </div>
     </section>
+
+    <div class="email-modal" id="email-modal" role="dialog" aria-modal="true" aria-labelledby="email-modal-title" hidden>
+      <div class="email-modal-backdrop" data-close-email-modal></div>
+      <div class="email-modal-card">
+        <button class="email-modal-close" id="email-modal-close" type="button" aria-label="Close email dialog">×</button>
+        <div class="email-card-icon" aria-hidden="true">@</div>
+        <span class="email-label">MY EMAIL ADDRESS</span>
+        <h2 id="email-modal-title">Let's connect</h2>
+        <p>You can reach me directly through this email address:</p>
+        <a class="email-modal-address" href="mailto:jfiel_260000000248@uic.edu.ph">jfiel_260000000248@uic.edu.ph</a>
+        <div class="email-modal-actions">
+          <a class="button button-primary" href="mailto:jfiel_260000000248@uic.edu.ph">Open Email <span>↗</span></a>
+          <button class="copy-email" id="modal-copy-email" type="button">Copy Email</button>
+        </div>
+        <span class="email-modal-status" id="email-modal-status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
