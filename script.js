@@ -1,3 +1,4 @@
+
 // John Fiel E-Portfolio — interactive features
 
 const yearElement = document.getElementById("year");
@@ -7,10 +8,55 @@ const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 const navItems = document.querySelectorAll(".nav-link");
 const pageLinks = document.querySelectorAll('a[href^="#"]');
+const emailAddress = "jfiel_260000000248@uic.edu.ph";
+const emailPopupTrigger = document.getElementById("email-popup-trigger");
+const emailModal = document.getElementById("email-modal");
+const emailModalClose = document.getElementById("email-modal-close");
+const modalCopyEmail = document.getElementById("modal-copy-email");
+const emailModalStatus = document.getElementById("email-modal-status");
 
 // Automatically display the current year.
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
+}
+
+// Show the email address in a focused dialog from the contact button.
+const closeEmailModal = () => {
+  if (!emailModal) return;
+  emailModal.hidden = true;
+  document.body.style.overflow = "";
+};
+
+if (emailPopupTrigger && emailModal) {
+  emailPopupTrigger.addEventListener("click", () => {
+    emailModal.hidden = false;
+    document.body.style.overflow = "hidden";
+    emailModalClose?.focus();
+  });
+
+  emailModalClose?.addEventListener("click", closeEmailModal);
+  emailModal.querySelector("[data-close-email-modal]")?.addEventListener("click", closeEmailModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !emailModal.hidden) closeEmailModal();
+  });
+}
+
+if (modalCopyEmail) {
+  modalCopyEmail.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(emailAddress);
+      modalCopyEmail.textContent = "Copied!";
+      if (emailModalStatus) emailModalStatus.textContent = "Email copied to your clipboard.";
+    } catch {
+      if (emailModalStatus) emailModalStatus.textContent = "Please select the email address and copy it manually.";
+    }
+
+    window.setTimeout(() => {
+      modalCopyEmail.textContent = "Copy Email";
+      if (emailModalStatus) emailModalStatus.textContent = "";
+    }, 2600);
+  });
 }
 
 // Switch between the midnight theme and a light theme.
